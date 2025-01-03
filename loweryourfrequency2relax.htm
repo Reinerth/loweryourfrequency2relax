@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loweryourfrequency2relax</title>
+
+    <link rel="icon" type="image/x-icon" href="./mvc/view/img/ready.png?since=202501021900&svnrevision=001">
+    <link rel="stylesheet" href="./mvc/view/css/style.css?since=202501021900&svnrevision=001">
+</head>
+
+<body>
+    <!-- 
+
+        Regarding the used applications file- and code-structure,
+        (my favourite of all times), you can find details 
+        and a template of it on github:
+        https://github.com/Reinerth/application-template-MVC-Pattern
+
+
+        Regarding the application:
+        loweryourfrequency2relax is a little app based on JavaScript.
+        Meant to be used for meditation to calm down.
+        Yet, tested only with edge-browser Version 92.0.902.67 (Official build) (64-bit).
+    -->
+
+    <!-- The DOM-elements (plus CSS and IMG) represent the VIEW -->
+    <div id="mainContainer">
+
+        <div id="timerangeToAvoidContainer">
+
+            <div id="avoidFromToText">
+                <div id="avoidFromText">avoid from:</div>
+                <div id="avoidToText">to:</div>
+            </div>
+
+            <div id="timerangeToAvoidSelectContainer">
+                <select id="avoidFromSelect">
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                </select>
+
+                <div id="invalidTimerangeMessage"></div>
+
+                <select id="avoidToSelect">
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                </select>
+            </div>
+        </div>
+
+
+
+        <div id="rangeValueLeft" class="rangeValueLeft">1</div>
+        <div id="rangeValueUnit" class="rangeValueUnit">sec.</div>
+        <div id="rangeValueHasChanged" class="rangeValueHasChanged"></div>
+        <div id="rangeValueRight" class="rangeValueRight">60</div>
+
+        <input id="slider" class="slider" type="range" min="1" max="60" step="0.1">
+
+        <div id="rangeValue" class="rangeValue"></div>
+
+        <div id="pressAllRight" class="mySwitch active">All Right</div>
+
+    </div>
+
+
+
+
+    <!-- The Center for Configuration and Model must be included first. -->
+    <script src="./mvc/model/loweryourfrequency2relax.js?since=202501021900&svnrevision=001"></script>
+
+
+    <!-- The Classes / Modules. The order of including the modules doesnt matter. -->
+    <script src="./usersettings.js?since=202501021900&svnrevision=001" onload="this.src='./usersettings.js?avoidCacheOnReload='+Math.random()"></script>
+    <script src="./mvc/controller/controller.js?since=202501021900&svnrevision=001"></script>
+
+    <!--  
+        Workaround regarding the usersettings.js: 
+        When user has loaded already the app in browser, 
+        and then he changes some settings in the file usersettings.js 
+        the browser would remember the file as previously loaded, 
+        except user would delete the browsers cache. 
+        Now the browser retrieves the file on every F5-reload again, due to a different URL (different parameter-value).
+        From my understanding this loads the file like following:
+        The browser loads initialy the file from the given src usersettings.js.
+        When load is finished, the src gets changed to usersettings.js+randomnumber,
+        even the file is already loaded.
+        On pressing the F5-key/reload, the browser now retrievs the file again due to the changed URL.
+    -->
+
+
+    <script>
+
+       /**
+        * INVOKE public functions from the classes of the application.
+        */
+       loweryourfrequency2relax.init();
+
+       /**
+        * In the WINDOW-object (in console of the Developer Tools F12) we can see our application ("loweryourfrequency2relax").
+        * SETTINGS are always accessible (the settings are in loweryourfrequency2relax.js)
+        */
+       console.log(window.loweryourfrequency2relax);
+       console.log(window.loweryourfrequency2relax.version);
+
+    </script>
+</body>
+
+</html>
