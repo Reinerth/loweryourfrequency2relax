@@ -7,7 +7,7 @@ The browser-app needs no server or internet.
 **This are the possible configuration settings. (details in usersettings.js):**
 <br><br>
 window.loweryourfrequency2relax.timerangeToAvoid = true; // "false" hides the two option-selects with the timerange to pause. <br>
-window.loweryourfrequency2relax.soundFile = "tock-02-2sec.m4a"; <br>
+window.loweryourfrequency2relax.soundFile = "tock-02-2sec.m4a"; // path: \mvc\view\sound <br>
 window.loweryourfrequency2relax.unit = "sec"; <br>
 window.loweryourfrequency2relax.backgroundColor = "#336699"; <br>
 window.loweryourfrequency2relax.backgroundImage = true; <br>
@@ -19,6 +19,6 @@ window.loweryourfrequency2relax.sliderSetValue = 3.1; // The value that is set o
 <br><br>
 **This is what it looks like:**
 <br><br>
+![example-settings-01](https://github.com/user-attachments/assets/754ef070-b6ee-4fc6-9cdd-e68673150354)
 
-![example-settings-01](https://github.com/user-attachments/assets/51502737-129e-460a-93e2-8d11921d6ce4)
 
